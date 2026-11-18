@@ -14,6 +14,7 @@ import { PortfolioSection } from './components/PortfolioSection';
 import { CredentialsProcessSection } from './components/CredentialsProcessSection';
 import { ContactFooterSection } from './components/ContactFooterSection';
 import { Studio3DModal } from './components/ThreeBrandSculpture';
+import { AIAssistantWidget } from './components/AIAssistantWidget';
 
 const STORAGE_KEY = 'jihad_brand_lang';
 
@@ -90,6 +91,12 @@ export default function App() {
         open={studio3DOpen}
         onClose={() => setStudio3DOpen(false)}
         content={content.studio3d}
+      />
+
+      <AIAssistantWidget
+        content={content.assistant}
+        language={language}
+        onBookAudit={() => setPreselectedServiceId('seo')}
       />
     </div>
   );

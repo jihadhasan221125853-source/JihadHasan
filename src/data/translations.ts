@@ -616,6 +616,25 @@ export const TRANSLATIONS: Record<Language, SiteContent> = {
         },
       },
     },
+    assistant: {
+      launcherLabel: 'AI Assistant',
+      openAriaLabel: 'Open JIHAD AI Marketing Assistant',
+      closeAriaLabel: 'Close AI Assistant',
+      resetAriaLabel: 'Reset conversation',
+      eyebrow: 'JIHAD · AI Concierge',
+      title: 'Marketing & SEO Assistant',
+      welcomeMessage:
+        'Welcome. Ask me about JIHAD’s SEO audits, keyword research, Meta & YouTube ads, or website design — I can help you pick the right starting point.',
+      inputPlaceholder: 'Ask about SEO, ads, or web design...',
+      sendAriaLabel: 'Send message',
+      thinkingLabel: 'Preparing your answer...',
+      bookAuditCta: 'Book a Free SEO Audit',
+      quickPrompts: [
+        'What is included in a Free SEO Audit?',
+        'How does JIHAD structure Facebook & YouTube Ads?',
+        'Can you help redesign my website for SEO & leads?',
+      ],
+    },
     footer: {
       tagline: 'Digital Marketing Specialist — SEO, Paid Media & Web Architecture.',
       navigationHeading: 'Navigation',
@@ -1235,6 +1254,25 @@ export const TRANSLATIONS: Record<Language, SiteContent> = {
           messageRequired: 'অনুগ্রহ করে প্রজেক্ট সম্পর্কে অন্তত ১০ অক্ষরের সংক্ষিপ্ত বিবরণ লিখুন।',
         },
       },
+    },
+    assistant: {
+      launcherLabel: 'এআই অ্যাসিস্ট্যান্ট',
+      openAriaLabel: 'জিহাদ এআই মার্কেটিং অ্যাসিস্ট্যান্ট খুলুন',
+      closeAriaLabel: 'এআই অ্যাসিস্ট্যান্ট বন্ধ করুন',
+      resetAriaLabel: 'কথোপকথন রিসেট করুন',
+      eyebrow: 'JIHAD · এআই কনসিয়ার্জ',
+      title: 'মার্কেটিং ও এসইও অ্যাসিস্ট্যান্ট',
+      welcomeMessage:
+        'স্বাগতম। জিহাদের এসইও অডিট, কিওয়ার্ড রিসার্চ, মেটা ও ইউটিউব অ্যাডস কিংবা ওয়েবসাইট ডিজাইন সম্পর্কে যেকোনো প্রশ্ন করুন — আমি আপনাকে সঠিক দিকনির্দেশনা দিতে সাহায্য করব।',
+      inputPlaceholder: 'এসইও, বিজ্ঞাপন বা ওয়েবসাইট নিয়ে প্রশ্ন করুন...',
+      sendAriaLabel: 'বার্তা পাঠান',
+      thinkingLabel: 'উত্তর প্রস্তুত করা হচ্ছে...',
+      bookAuditCta: 'ফ্রি এসইও অডিট বুক করুন',
+      quickPrompts: [
+        'ফ্রি এসইও অডিটে কী কী যাচাই করা হয়?',
+        'ফেসবুক ও ইউটিউব অ্যাডস কীভাবে পরিচালনা করা হয়?',
+        'এসইও-বান্ধব ওয়েবসাইট ডিজাইনে কীভাবে সাহায্য করেন?',
+      ],
     },
     footer: {
       tagline: 'ডিজিটাল মার্কেটিং স্পেশালিস্ট — এসইও, পেইড মিডিয়া ও ওয়েব আর্কিটেকচার।',

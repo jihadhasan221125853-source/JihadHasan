@@ -248,6 +248,20 @@ export interface SiteContent {
       };
     };
   };
+  assistant: {
+    launcherLabel: string;
+    openAriaLabel: string;
+    closeAriaLabel: string;
+    resetAriaLabel: string;
+    eyebrow: string;
+    title: string;
+    welcomeMessage: string;
+    inputPlaceholder: string;
+    sendAriaLabel: string;
+    thinkingLabel: string;
+    bookAuditCta: string;
+    quickPrompts: string[];
+  };
   footer: {
     tagline: string;
     navigationHeading: string;
