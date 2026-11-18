@@ -7,22 +7,30 @@ interface AboutExpertiseSectionProps {
   expertise: SiteContent['expertise'];
 }
 
+const DEFAULT_PORTRAIT_URL =
+  '/assets/aistudio/Premium_Portrait_in_Gold_Frame_9aaced93.png';
+
 export function AboutExpertiseSection({ about, expertise }: AboutExpertiseSectionProps) {
-  const [portraitUrl, setPortraitUrl] = useState<string | null>(null);
+  const [customPortraitUrl, setCustomPortraitUrl] = useState<string | null>(null);
+  const [imageError, setImageError] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const activePortraitUrl = customPortraitUrl ?? DEFAULT_PORTRAIT_URL;
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
     const objectUrl = URL.createObjectURL(file);
-    setPortraitUrl((prev) => {
+    setImageError(false);
+    setCustomPortraitUrl((prev) => {
       if (prev) URL.revokeObjectURL(prev);
       return objectUrl;
     });
   };
 
   const handleRemovePortrait = () => {
-    setPortraitUrl((prev) => {
+    setImageError(false);
+    setCustomPortraitUrl((prev) => {
       if (prev) URL.revokeObjectURL(prev);
       return null;
     });
@@ -40,16 +48,17 @@ export function AboutExpertiseSection({ about, expertise }: AboutExpertiseSectio
       >
         <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-14">
-            {/* Approved Portrait Frame (No AI-generated replacement face) */}
+            {/* Editorial Portrait Frame */}
             <div className="lg:col-span-5">
               <div className="border border-[#C6A15B]/30 bg-[#15100D] p-4">
-                <div className="relative aspect-[3/4] w-full overflow-hidden border border-[#C6A15B]/15 bg-[#0E0B09]">
-                  {portraitUrl ? (
+                <div className="relative aspect-square w-full overflow-hidden border border-[#C6A15B]/15 bg-[#080808]">
+                  {!imageError ? (
                     <img
-                      src={portraitUrl}
+                      src={activePortraitUrl}
                       alt={about.portraitTitle}
                       referrerPolicy="no-referrer"
-                      className="h-full w-full object-cover"
+                      onError={() => setImageError(true)}
+                      className="h-full w-full object-cover object-center"
                     />
                   ) : (
                     <div className="flex h-full w-full flex-col items-center justify-center p-8 text-center">
@@ -80,10 +89,10 @@ export function AboutExpertiseSection({ about, expertise }: AboutExpertiseSectio
                     className="inline-flex min-h-[42px] cursor-pointer items-center gap-2 border border-[#C6A15B]/50 bg-[#211A15] px-4 py-2 text-xs font-medium text-[#F3EBDD] transition-colors hover:border-[#C6A15B] hover:bg-[#C6A15B] hover:text-[#080808] whitespace-nowrap"
                   >
                     <ImagePlus className="h-3.5 w-3.5" aria-hidden="true" />
-                    <span>{portraitUrl ? about.replacePortraitCta : about.uploadPortraitCta}</span>
+                    <span>{about.replacePortraitCta}</span>
                   </label>
 
-                  {portraitUrl && (
+                  {customPortraitUrl && (
                     <button
                       type="button"
                       onClick={handleRemovePortrait}
