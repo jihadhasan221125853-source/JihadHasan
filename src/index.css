@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #080808;
+  --color-espresso: #211A15;
+  --color-espresso-deep: #15100D;
+  --color-gold: #C6A15B;
+  --color-gold-bright: #D9B774;
+  --color-beige: #F3EBDD;
+  --color-beige-muted: #CFC3B0;
+
+  --font-display: "Playfair Display", "Noto Serif Bengali", Georgia, serif;
+  --font-sans: "Inter", "Hind Siliguri", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+  --bg-obsidian: #080808;
+  --bg-espresso: #211A15;
+  --accent-gold: #C6A15B;
+  --text-beige: #F3EBDD;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: #080808;
+  color: #F3EBDD;
+  scroll-behavior: smooth;
+}
+
+html[lang="bn"] {
+  font-family: "Hind Siliguri", "Inter", system-ui, sans-serif;
+}
+
+html[lang="bn"] .font-display {
+  font-family: "Noto Serif Bengali", "Playfair Display", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
